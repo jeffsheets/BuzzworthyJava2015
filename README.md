@@ -1,9 +1,9 @@
-Slides for Buzzworthy Java with Spring Boot and JHipster at Omaha Java Users Group, October 2014
+Slides for Buzzworthy Java with Spring Boot and JHipster at Nebraska.Code() Conf 2015
 =======
 
-Presentation here: http://jeffsheets.github.io/BuzzworthyJava
+Presentation here: http://jeffsheets.github.io/BuzzworthyJava2015
 
-Screencast here: https://www.youtube.com/watch?v=yoEcBGxcRwU
+Conference details here: http://nebraskacode.com/
 
 #### Dependencies
 * Node
