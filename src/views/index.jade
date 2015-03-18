@@ -89,12 +89,12 @@ html(class="no-js", ng-app="main")
 
         section
           section
-            h2 'Cool' Languages in 2015
+            h2 What's Cool in 2015?
             ul
               li JavaScript
               li JavaScript
               li JavaScript
-              li Groovy, Clojure, Scala, Kotlin
+              li Groovy, Clojure, Scala
               li F#, Swift, Go, Haskell, Ruby
               li ??? Java ???
           section.image-section(data-state="image-slide")
@@ -106,32 +106,23 @@ html(class="no-js", ng-app="main")
             img(src="assets/img/hipster-bow-tie.jpg")
             div
               small http://jhipster.github.io/
-          section
-            h2 Javascript?
-            ul
-              li We wrote Javascript (DHTML) before it was cool!
-              li CSS when it wasn't LESS or SASS
-              li AJAX before the blog post calling it AJAX 
-               a(href="http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications/", target="_blank") 
-                i.fa.fa-external-link
-          section
-            h2 Where did it all go wrong?
-            img(src="assets/img/hipster-vinyl.jpg").sixty
-            div
-              small http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened
-          section
+          section.image-section(data-state="image-slide")
             h2 Java's Image Problem
-            ul
+            img(src="assets/img/hipster-vinyl.jpg").sixty.left
+            ul.right
               li NodeJS, Ruby, Go, Swift, etc
               li Code Verbosity and Ceremony
               li Too "enterprisey"
               li App Servers
+            div
+              small http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened
           section
             h2 JVM Languages Help
             ul
-              li Groovy and Scala and JRuby, etc...
               li Groovy was Swift before Swift
-              li Kotlin (aka Scala the good parts)
+              li Nashorn runs JS on the JVM
+              li JRuby for Ruby
+              li Clojure, Scala, Kotlin
           section
             h2 Java's Speed Problem
             ul
@@ -165,11 +156,12 @@ html(class="no-js", ng-app="main")
               li Others - Dropwizard, Akka, Vert.x
 
         section
-          section
+          section.image-section(data-state="image-slide")
             h2 Spring Boot! &nbsp;
-             a(href="http://docs.spring.io/spring-boot/docs/1.1.8.RELEASE/reference/htmlsingle/#getting-started-introducing-spring-boot", target="_blank")
+             a(href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-introducing-spring-boot", target="_blank")
               i.fa.fa-external-link
-            ul
+            img(src="assets/img/kuribo.jpg").mario.left
+            ul.right
               li Opinionated Spring all wired up
               li 100% Java Config (no XML!)
               li Executable Jars, embedded web server (or not)
@@ -177,14 +169,13 @@ html(class="no-js", ng-app="main")
               li Easy REST & Microservices
               li Spring Data JPA - dynamic finders (grails style)
               li Production-ready by default
-          section
-            h2 Old + New = Spring Boot
-            img(src="assets/img/hipster-bike.jpg").sixty
             div
-              small http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened
+              br
+              small http://wiimedia.ign.com/wii/image/article/104/1045630/new-super-mario-bros-wii-20091116030234930.jpg
           section
             h2 Boot Install and CLI
             ul
+              li 'curl -s get.gvmtool.net | bash'   (for gvm)
               li gvm install springboot
               li A full tweet-sized 140 character app:
               li spring run GBR.groovy
@@ -204,6 +195,9 @@ html(class="no-js", ng-app="main")
                a(href="http://start.spring.io/", target="_blank")
                 i.fa.fa-rocket
               li a la carte selection menu
+              li IntelliJ will soon natively support 
+               a(href="http://blog.jetbrains.com/idea/2015/03/develop-spring-boot-applications-more-productively-with-intellij-idea-14-1/", target="_blank")
+                i.fa.fa-rocket
           section
             h2 Or just 'curl start.spring.io'
             img(src="assets/img/curl-spring-boot.png").sixty
@@ -257,42 +251,11 @@ html(class="no-js", ng-app="main")
               li Important piece of Spring Boot
               li dev/test/prod profiles
               li Available in core Spring too, but Boot leans on them
-          section
+              br
             h2 Properties
             ul
               li Hierarchical properties
               li application-*.properties, application.properties, System Props, JNDI Var, JVM Arg, ...
-          section
-            h2 Database Props
-            div Extend it further, to pull props from a database table 
-             a(href="https://gist.github.com/jeffsheets/8ab5f3aeb74787bdb051", target="_blank")
-              i.fa.fa-external-link
-            pre.
-              <code data-trim contenteditable class="java">public class SpringPropertiesConfig {
-              @PostConstruct
-              public void initializeDatabasePropertySourceUsage() {
-                  MutablePropertySources propertySources = ((ConfigurableEnvironment) env).getPropertySources();
-
-                  try {
-                      //dataSource, Table Name, Key Column, Value Column
-                      DatabaseConfiguration databaseConfiguration = new DatabaseConfiguration(dataSource(), "AppConfiguration", "propertyKey", "propertyValue");
-                      
-                      //CommonsConfigurationFactoryBean comes from https://java.net/projects/springmodules/sources/svn/content/tags/release-0_8/projects/commons/src/java/org/springmodules/commons/configuration/CommonsConfigurationFactoryBean.java?rev=2110
-                      //Per https://jira.spring.io/browse/SPR-10213 I chose to just copy the raw source into our project
-                      CommonsConfigurationFactoryBean commonsConfigurationFactoryBean = new CommonsConfigurationFactoryBean(databaseConfiguration);
-                      
-                      Properties dbProps = (Properties) commonsConfigurationFactoryBean.getObject();
-                      PropertiesPropertySource dbPropertySource = new PropertiesPropertySource("dbPropertySource", dbProps);
-
-                      //By being First, Database Properties take precedence over all other properties that have the same key name
-                      //You could put this last, or just in front of the application.properties if you wanted to...
-                      propertySources.addFirst(dbPropertySource);
-                  } catch (Exception e) {
-                      log.error("Error during database properties setup", e);
-                      throw new RuntimeException(e);
-                  }
-              }
-              </code>
           section
             h2 Spring Data JPA
             ul
@@ -326,29 +289,7 @@ html(class="no-js", ng-app="main")
                 }
               </code>
           section
-            h2 REST Exception Handling
-            ul
-              li Global handling based on Exception types
-              li See RestResponseEntityExceptionHandler.java 
-               a(href="https://gist.github.com/jeffsheets/8b73620e0912afd95aa0#file-restresponseentityexceptionhandler-java", target="_blank")
-                i.fa.fa-external-link
-            pre.
-              <code data-trim contenteditable class="groovy">@ControllerAdvice
-                public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
-                    @ExceptionHandler({ Exception.class })
-                    @ResponseBody
-                    public ResponseEntity<?> handleAnyException(Exception e) {
-                        return errorResponse(e, HttpStatus.INTERNAL_SERVER_ERROR);
-                    }
-
-                    @ExceptionHandler({ InvocationTargetException.class, IllegalArgumentException.class})
-                    @ResponseBody
-                    public ResponseEntity handleMiscFailures(Throwable t) {
-                        return errorResponse(t, HttpStatus.BAD_REQUEST);
-                    }
-                              </code>
-          section
-            h2 Spring MVC Tests &nbsp;
+            h2 Spring MVC Spock Tests &nbsp;
              a(href="https://gist.github.com/jeffsheets/ada3de8fe4a536e5351b", target="_blank")
               i.fa.fa-external-link
             pre.
@@ -383,6 +324,11 @@ html(class="no-js", ng-app="main")
               li No-SQL data stores, if that's your thing
               li Great docs
               li Simple tutorials
+          section
+            h2 Old + New = Spring Boot
+            img(src="assets/img/hipster-bike.jpg").sixty
+            div
+              small http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened
 
         section
           section
@@ -497,6 +443,12 @@ html(class="no-js", ng-app="main")
               <code data-trim contenteditable>mvn -Pprod package
               java -jar jhipster-0.0.1-SNAPSHOT.war --spring.profiles.active=prod
               </code>
+          section
+            h2 Very Actively Developed
+            ul
+              li 2.6.0 added full stack Validations
+              li 2.5 added Gatling Performance testing
+              li Spring Boot 1.2.2 added JMustache support
           section
             h2 Extras
             ul
