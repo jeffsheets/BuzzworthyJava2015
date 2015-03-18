@@ -3,7 +3,7 @@
   <!-- <![endif]-->
   <head>
     <meta charset="utf-8"/>
-    <title>Buzzworthy Java</title>
+    <title>Buzzworthy Java 2015</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -29,12 +29,13 @@
         <section data-state="index-slide" class="index-section">
           <h1><i class="fa fa-coffee">&nbsp; &nbsp; </i><i class="fa fa-thumbs-up"></i></h1>
           <h2>Buzzworthy Java - Spring Boot &amp; JHipster</h2>
-          <div>Jeff Sheets - 2014</div>
+          <div>Jeff Sheets</div>
+          <div>Nebraska.Code() Conf - 2015</div>
         </section>
         <section data-state="github-slide" class="github-section">
           <h1><i class="fa fa-github"></i></h1>
-          <p>These slides are up on GitHub</p><a href="http://jeffsheets.github.io/BuzzworthyJava/" target="_blank">jeffsheets.github.io/BuzzworthyJava</a>
-          <p>Also a printable version | <a href="http://jeffsheets.github.io/BuzzworthyJava/?print-pdf#/" target="_blank">Open Printable PDF</a></p>
+          <p>These slides are up on GitHub</p><a href="http://jeffsheets.github.io/BuzzworthyJava2015/" target="_blank">jeffsheets.github.io/BuzzworthyJava2015</a>
+          <p>Also a printable version | <a href="http://jeffsheets.github.io/BuzzworthyJava2015/?print-pdf#/" target="_blank">Open Printable PDF</a></p>
         </section>
         <section data-state="image-slide" class="image-section"><img src="assets/img/spring-boot-icon-large.png" class="boot"/>
           <div><small>http://projects.spring.io/spring-boot/</small></div>
@@ -43,10 +44,6 @@
           <section data-state="image-slide" class="image-section"><img src="assets/img/hipster-logo.png" class="hipster"/>
             <div><small>http://jhipster.github.io/</small></div>
             <div><small>https://twitter.com/java_hipster/status/522857424181809152</small></div>
-          </section>
-          <section data-state="image-slide" class="image-section">
-            <h2>Happy Birthday</h2><img src="assets/img/jhipster-birthday.png"/>
-            <div><small><a href="https://github.com/jhipster/generator-jhipster/commit/c8630ab7af7b6a99db880b3b0e2403806b7d2436" target="_blank">Github first commit <i class="fa fa-external-link"></i></a></small></div>
           </section>
         </section>
         <section>
@@ -88,19 +85,24 @@
         </section>
         <section>
           <section>
+            <h2>'Cool' Languages in 2015</h2>
+            <ul>
+              <li>JavaScript</li>
+              <li>JavaScript</li>
+              <li>JavaScript</li>
+              <li>Groovy, Clojure, Scala, Kotlin</li>
+              <li>F#, Swift, Go, Haskell, Ruby</li>
+              <li>??? Java ???</li>
+            </ul>
+          </section>
+          <section data-state="image-slide" class="image-section">
             <h2>Set the record straight</h2>
             <ul>
               <li>We learned Java because it was the 'hipster' lang</li>
               <li>C and COBOL were the old domain</li>
               <li>Garbage Collection and Object Oriented FTW!</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Web Apps?</h2>
-            <ul>
-              <li>We wrote Web apps before JSPs on Netscape</li>
-              <li>Instead of Apache mod_cgi and perl</li>
-            </ul>
+            </ul><img src="assets/img/hipster-bow-tie.jpg"/>
+            <div><small>http://jhipster.github.io/</small></div>
           </section>
           <section>
             <h2>Javascript?</h2>
@@ -174,9 +176,6 @@
               <li>Others - Dropwizard, Akka, Vert.x</li>
             </ul>
           </section>
-          <section data-state="image-slide" class="image-section"><img src="assets/img/hipster-bow-tie.jpg"/>
-            <div><small>http://jhipster.github.io/</small></div>
-          </section>
         </section>
         <section>
           <section>
@@ -190,6 +189,10 @@
               <li>Spring Data JPA - dynamic finders (grails style)</li>
               <li>Production-ready by default</li>
             </ul>
+          </section>
+          <section>
+            <h2>Old + New = Spring Boot</h2><img src="assets/img/hipster-bike.jpg" class="sixty"/>
+            <div><small>http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened</small></div>
           </section>
           <section>
             <h2>Boot Install and CLI</h2>
@@ -215,6 +218,10 @@
             </ul>
           </section>
           <section>
+            <h2>Or just 'curl start.spring.io'</h2><img src="assets/img/curl-spring-boot.png" class="sixty"/>
+            <div><small>https://twitter.com/craigburke1/status/575690058667286528</small></div>
+          </section>
+          <section>
             <h2>Embedded Web Container</h2>
             <ul>
               <li>Just run as a main class in a jar</li>
@@ -238,7 +245,7 @@
                 </li>
                 <li>Because classloaders...</li>
                 <li>It can be done</li>
-                <li>Get your Google / Stackoverflow keyword search game right</li>
+                <li>Get your Google / Stackoverflow search game right</li>
               </ul>
             </ul>
           </section>
@@ -280,32 +287,6 @@
               <li>Hierarchical properties</li>
               <li>application-*.properties, application.properties, System Props, JNDI Var, JVM Arg, ...</li>
             </ul>
-          </section>
-          <section>
-            <h2>Boot-style Props in raw Spring</h2>
-            <div>Cool to use application-*.properties in non-Boot apps too <a href="https://gist.github.com/jeffsheets/429b5454f9008aeccb1c" target="_blank"><i class="fa fa-external-link"></i></a></div>
-            <pre><code data-trim contenteditable class="java">public class PropertiesInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
-public void initialize(ConfigurableApplicationContext applicationContext) {
-    ConfigurableEnvironment env = applicationContext.getEnvironment();
-    
-    String[] activeProfiles = getActiveProfiles(env);
-    
-    for (String profileName : activeProfiles) {
-        log.info("Loading properties for Spring Active Profile: {}", profileName);
-        try {
-            ResourcePropertySource propertySource = new ResourcePropertySource(profileName
-             + "EnvProperties", "classpath:application-" + profileName + ".properties");
-             
-            env.getPropertySources().addLast(propertySource);
-        } catch (IOException e) {
-            log.error("ERROR during environment properties setup - TRYING TO LOAD: " + profileName, e);
-            
-            //Okay to silently fail here, as we might have profiles
-            // that do not have properties files (like dev1, dev2, etc)
-        }
-    }
-}
-</code></pre>
           </section>
           <section>
             <h2>Database Props</h2>
@@ -423,10 +404,6 @@ public void initializeDatabasePropertySourceUsage() {
               <li>Simple tutorials</li>
             </ul>
           </section>
-          <section>
-            <h2>Old + New = Spring Boot</h2><img src="assets/img/hipster-bike.jpg" class="sixty"/>
-            <div><small>http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened</small></div>
-          </section>
         </section>
         <section>
           <section>
@@ -497,6 +474,10 @@ gradle bootRun
 grunt server
 </code></pre>
           </section>
+          <section data-state="image-slide" class="image-section">
+            <h3>Ship It!</h3><img src="http://i.giphy.com/FPt4fI9BvUOXu.gif" class="sixty"/>
+            <div><small>http://i.giphy.com/FPt4fI9BvUOXu.gif</small></div>
+          </section>
           <section>
             <h2>Code Walk-thru</h2>
           </section>
@@ -566,7 +547,14 @@ java -jar jhipster-0.0.1-SNAPSHOT.war --spring.profiles.active=prod
             </ul>
           </section>
           <section>
-            <h2>What about my legacy app?</h2>
+            <h2>Should I use this in my legacy application?</h2>
+          </section>
+          <section data-state="image-slide" class="image-section">
+            <h3>YES!</h3><img src="http://i.giphy.com/8CSflsMG1IFos.gif" class="sixty"/>
+            <div><small>http://i.giphy.com/8CSflsMG1IFos.gif</small></div>
+          </section>
+          <section>
+            <h2>In your legacy app:</h2>
             <ul>
               <li>Pull in pieces today</li>
               <li>Look at github for Spring Boot</li>
@@ -585,8 +573,8 @@ java -jar jhipster-0.0.1-SNAPSHOT.war --spring.profiles.active=prod
             </ul>
           </section>
           <section data-state="image-slide" class="image-section">
-            <h3>Questions &nbsp;<i class="fa fa-question-circle"></i></h3><img src="assets/img/hipster-final-boss.jpg" class="boss"/>
-            <div><small>https://twitter.com/Rokshimmer/status/514106534956388352</small></div>
+            <h3>Questions &nbsp;<i class="fa fa-question-circle"></i></h3><img src="http://i.giphy.com/UPXy00gJYEdgc.gif" class="boss"/>
+            <div><small>http://i.giphy.com/UPXy00gJYEdgc.gif</small></div>
           </section>
         </section>
       </div>

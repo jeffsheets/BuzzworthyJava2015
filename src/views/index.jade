@@ -3,7 +3,7 @@ html(class="no-js", ng-app="main")
   // <![endif]
   head
     meta(charset="utf-8")
-    title Buzzworthy Java
+    title Buzzworthy Java 2015
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
     meta(name="apple-mobile-web-app-capable", content="yes")
     meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
@@ -29,15 +29,16 @@ html(class="no-js", ng-app="main")
             i.fa.fa-coffee &nbsp; &nbsp; 
             i.fa.fa-thumbs-up
           h2 Buzzworthy Java - Spring Boot &amp; JHipster
-          div Jeff Sheets - 2014
+          div Jeff Sheets
+          div Nebraska.Code() Conf - 2015
 
         section.github-section(data-state="github-slide")
           h1
             i.fa.fa-github
           p These slides are up on GitHub
-          a(href="http://jeffsheets.github.io/BuzzworthyJava/", target="_blank") jeffsheets.github.io/BuzzworthyJava
+          a(href="http://jeffsheets.github.io/BuzzworthyJava2015/", target="_blank") jeffsheets.github.io/BuzzworthyJava2015
           p Also a printable version | 
-           a(href="http://jeffsheets.github.io/BuzzworthyJava/?print-pdf#/", target="_blank") Open Printable PDF
+           a(href="http://jeffsheets.github.io/BuzzworthyJava2015/?print-pdf#/", target="_blank") Open Printable PDF
 
         section.image-section(data-state="image-slide")
           img(src="assets/img/spring-boot-icon-large.png").boot
@@ -51,13 +52,6 @@ html(class="no-js", ng-app="main")
               small http://jhipster.github.io/
             div
               small https://twitter.com/java_hipster/status/522857424181809152
-          section.image-section(data-state="image-slide")
-            h2 Happy Birthday
-            img(src="assets/img/jhipster-birthday.png")
-            div
-              small 
-               a(href="https://github.com/jhipster/generator-jhipster/commit/c8630ab7af7b6a99db880b3b0e2403806b7d2436" target="_blank") Github first commit 
-                i.fa.fa-external-link
               
         section
             h2 Buzzworthy Objectives
@@ -95,16 +89,23 @@ html(class="no-js", ng-app="main")
 
         section
           section
+            h2 'Cool' Languages in 2015
+            ul
+              li JavaScript
+              li JavaScript
+              li JavaScript
+              li Groovy, Clojure, Scala, Kotlin
+              li F#, Swift, Go, Haskell, Ruby
+              li ??? Java ???
+          section.image-section(data-state="image-slide")
             h2 Set the record straight
             ul
               li We learned Java because it was the 'hipster' lang
               li C and COBOL were the old domain
               li Garbage Collection and Object Oriented FTW!
-          section
-            h2 Web Apps?
-            ul
-              li We wrote Web apps before JSPs on Netscape
-              li Instead of Apache mod_cgi and perl
+            img(src="assets/img/hipster-bow-tie.jpg")
+            div
+              small http://jhipster.github.io/
           section
             h2 Javascript?
             ul
@@ -162,10 +163,6 @@ html(class="no-js", ng-app="main")
                 ul
                   li Groovy / Spock / Gradle / gvm / Grails
               li Others - Dropwizard, Akka, Vert.x
-          section.image-section(data-state="image-slide")
-            img(src="assets/img/hipster-bow-tie.jpg")
-            div
-              small http://jhipster.github.io/
 
         section
           section
@@ -180,6 +177,11 @@ html(class="no-js", ng-app="main")
               li Easy REST & Microservices
               li Spring Data JPA - dynamic finders (grails style)
               li Production-ready by default
+          section
+            h2 Old + New = Spring Boot
+            img(src="assets/img/hipster-bike.jpg").sixty
+            div
+              small http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened
           section
             h2 Boot Install and CLI
             ul
@@ -203,6 +205,11 @@ html(class="no-js", ng-app="main")
                 i.fa.fa-rocket
               li a la carte selection menu
           section
+            h2 Or just 'curl start.spring.io'
+            img(src="assets/img/curl-spring-boot.png").sixty
+            div
+              small https://twitter.com/craigburke1/status/575690058667286528
+          section
             h2 Embedded Web Container
             ul
               li Just run as a main class in a jar
@@ -222,7 +229,7 @@ html(class="no-js", ng-app="main")
                  | is tricky. Especially Hibernate/JPA.
                 li Because classloaders...
                 li It can be done
-                li Get your Google / Stackoverflow keyword search game right
+                li Get your Google / Stackoverflow search game right
           section
             h2 Java Config
             ul
@@ -255,34 +262,6 @@ html(class="no-js", ng-app="main")
             ul
               li Hierarchical properties
               li application-*.properties, application.properties, System Props, JNDI Var, JVM Arg, ...
-          section
-            h2 Boot-style Props in raw Spring
-            div Cool to use application-*.properties in non-Boot apps too 
-               a(href="https://gist.github.com/jeffsheets/429b5454f9008aeccb1c", target="_blank")
-                i.fa.fa-external-link
-            pre.
-              <code data-trim contenteditable class="java">public class PropertiesInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
-              public void initialize(ConfigurableApplicationContext applicationContext) {
-                  ConfigurableEnvironment env = applicationContext.getEnvironment();
-           
-                  String[] activeProfiles = getActiveProfiles(env);
-           
-                  for (String profileName : activeProfiles) {
-                      log.info("Loading properties for Spring Active Profile: {}", profileName);
-                      try {
-                          ResourcePropertySource propertySource = new ResourcePropertySource(profileName
-                           + "EnvProperties", "classpath:application-" + profileName + ".properties");
-           
-                          env.getPropertySources().addLast(propertySource);
-                      } catch (IOException e) {
-                          log.error("ERROR during environment properties setup - TRYING TO LOAD: " + profileName, e);
-           
-                          //Okay to silently fail here, as we might have profiles
-                          // that do not have properties files (like dev1, dev2, etc)
-                      }
-                  }
-                }
-              </code>
           section
             h2 Database Props
             div Extend it further, to pull props from a database table 
@@ -404,11 +383,6 @@ html(class="no-js", ng-app="main")
               li No-SQL data stores, if that's your thing
               li Great docs
               li Simple tutorials
-          section
-            h2 Old + New = Spring Boot
-            img(src="assets/img/hipster-bike.jpg").sixty
-            div
-              small http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened
 
         section
           section
@@ -483,6 +457,11 @@ html(class="no-js", ng-app="main")
               gradle bootRun
               grunt server
               </code>
+          section.image-section(data-state="image-slide")
+            h3 Ship It!
+            img(src="http://i.giphy.com/FPt4fI9BvUOXu.gif").sixty
+            div
+              small http://i.giphy.com/FPt4fI9BvUOXu.gif
           section
             h2 Code Walk-thru
           section
@@ -540,7 +519,14 @@ html(class="no-js", ng-app="main")
               ul
                 li I had trouble with Websphere 8.5.5
           section
-            h2 What about my legacy app?
+            h2 Should I use this in my legacy application?
+          section.image-section(data-state="image-slide")
+            h3 YES!
+            img(src="http://i.giphy.com/8CSflsMG1IFos.gif").sixty
+            div
+              small http://i.giphy.com/8CSflsMG1IFos.gif
+          section
+            h2 In your legacy app:
             ul
               li Pull in pieces today
               li Look at github for Spring Boot
@@ -562,8 +548,8 @@ html(class="no-js", ng-app="main")
           section.image-section(data-state="image-slide")
             h3 Questions &nbsp;
              i.fa.fa-question-circle
-            img(src="assets/img/hipster-final-boss.jpg").boss
+            img(src="http://i.giphy.com/UPXy00gJYEdgc.gif").boss
             div
-              small https://twitter.com/Rokshimmer/status/514106534956388352
+              small http://i.giphy.com/UPXy00gJYEdgc.gif
 
     script(src="./assets/js/app.js")
