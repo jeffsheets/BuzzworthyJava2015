@@ -85,12 +85,12 @@
         </section>
         <section>
           <section>
-            <h2>'Cool' Languages in 2015</h2>
+            <h2>What's Cool in 2015?</h2>
             <ul>
               <li>JavaScript</li>
               <li>JavaScript</li>
               <li>JavaScript</li>
-              <li>Groovy, Clojure, Scala, Kotlin</li>
+              <li>Groovy, Clojure, Scala</li>
               <li>F#, Swift, Go, Haskell, Ruby</li>
               <li>??? Java ???</li>
             </ul>
@@ -104,33 +104,23 @@
             </ul><img src="assets/img/hipster-bow-tie.jpg"/>
             <div><small>http://jhipster.github.io/</small></div>
           </section>
-          <section>
-            <h2>Javascript?</h2>
-            <ul>
-              <li>We wrote Javascript (DHTML) before it was cool!</li>
-              <li>CSS when it wasn't LESS or SASS</li>
-              <li>AJAX before the blog post calling it AJAX <a href="http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications/" target="_blank"><i class="fa fa-external-link"></i></a></li>
-            </ul>
-          </section>
-          <section>
-            <h2>Where did it all go wrong?</h2><img src="assets/img/hipster-vinyl.jpg" class="sixty"/>
-            <div><small>http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened</small></div>
-          </section>
-          <section>
-            <h2>Java's Image Problem</h2>
-            <ul>
+          <section data-state="image-slide" class="image-section">
+            <h2>Java's Image Problem</h2><img src="assets/img/hipster-vinyl.jpg" class="sixty left"/>
+            <ul class="right">
               <li>NodeJS, Ruby, Go, Swift, etc</li>
               <li>Code Verbosity and Ceremony</li>
               <li>Too "enterprisey"</li>
               <li>App Servers</li>
             </ul>
+            <div><small>http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened</small></div>
           </section>
           <section>
             <h2>JVM Languages Help</h2>
             <ul>
-              <li>Groovy and Scala and JRuby, etc...</li>
               <li>Groovy was Swift before Swift</li>
-              <li>Kotlin (aka Scala the good parts)</li>
+              <li>Nashorn runs JS on the JVM</li>
+              <li>JRuby for Ruby</li>
+              <li>Clojure, Scala, Kotlin</li>
             </ul>
           </section>
           <section>
@@ -178,9 +168,9 @@
           </section>
         </section>
         <section>
-          <section>
-            <h2>Spring Boot! &nbsp;<a href="http://docs.spring.io/spring-boot/docs/1.1.8.RELEASE/reference/htmlsingle/#getting-started-introducing-spring-boot" target="_blank"><i class="fa fa-external-link"></i></a></h2>
-            <ul>
+          <section data-state="image-slide" class="image-section">
+            <h2>Spring Boot! &nbsp;<a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-introducing-spring-boot" target="_blank"><i class="fa fa-external-link"></i></a></h2><img src="assets/img/kuribo.jpg" class="mario left"/>
+            <ul class="right">
               <li>Opinionated Spring all wired up</li>
               <li>100% Java Config (no XML!)</li>
               <li>Executable Jars, embedded web server (or not)</li>
@@ -189,14 +179,12 @@
               <li>Spring Data JPA - dynamic finders (grails style)</li>
               <li>Production-ready by default</li>
             </ul>
-          </section>
-          <section>
-            <h2>Old + New = Spring Boot</h2><img src="assets/img/hipster-bike.jpg" class="sixty"/>
-            <div><small>http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened</small></div>
+            <div><br/><small>http://wiimedia.ign.com/wii/image/article/104/1045630/new-super-mario-bros-wii-20091116030234930.jpg</small></div>
           </section>
           <section>
             <h2>Boot Install and CLI</h2>
             <ul>
+              <li>'curl -s get.gvmtool.net | bash'   (for gvm)</li>
               <li>gvm install springboot</li>
               <li>A full tweet-sized 140 character app:</li>
               <li>spring run GBR.groovy</li>
@@ -215,6 +203,7 @@
             <ul>
               <li>start.spring.io INITIALIZR<a href="http://start.spring.io/" target="_blank"><i class="fa fa-rocket"></i></a></li>
               <li>a la carte selection menu</li>
+              <li>IntelliJ will soon natively support <a href="http://blog.jetbrains.com/idea/2015/03/develop-spring-boot-applications-more-productively-with-intellij-idea-14-1/" target="_blank"><i class="fa fa-rocket"></i></a></li>
             </ul>
           </section>
           <section>
@@ -278,44 +267,13 @@
             <ul>
               <li>Important piece of Spring Boot</li>
               <li>dev/test/prod profiles</li>
-              <li>Available in core Spring too, but Boot leans on them</li>
+              <li>Available in core Spring too, but Boot leans on them</li><br/>
             </ul>
-          </section>
-          <section>
             <h2>Properties</h2>
             <ul>
               <li>Hierarchical properties</li>
               <li>application-*.properties, application.properties, System Props, JNDI Var, JVM Arg, ...</li>
             </ul>
-          </section>
-          <section>
-            <h2>Database Props</h2>
-            <div>Extend it further, to pull props from a database table <a href="https://gist.github.com/jeffsheets/8ab5f3aeb74787bdb051" target="_blank"><i class="fa fa-external-link"></i></a></div>
-            <pre><code data-trim contenteditable class="java">public class SpringPropertiesConfig {
-@PostConstruct
-public void initializeDatabasePropertySourceUsage() {
-    MutablePropertySources propertySources = ((ConfigurableEnvironment) env).getPropertySources();
-    
-    try {
-        //dataSource, Table Name, Key Column, Value Column
-        DatabaseConfiguration databaseConfiguration = new DatabaseConfiguration(dataSource(), "AppConfiguration", "propertyKey", "propertyValue");
-        
-        //CommonsConfigurationFactoryBean comes from https://java.net/projects/springmodules/sources/svn/content/tags/release-0_8/projects/commons/src/java/org/springmodules/commons/configuration/CommonsConfigurationFactoryBean.java?rev=2110
-        //Per https://jira.spring.io/browse/SPR-10213 I chose to just copy the raw source into our project
-        CommonsConfigurationFactoryBean commonsConfigurationFactoryBean = new CommonsConfigurationFactoryBean(databaseConfiguration);
-        
-        Properties dbProps = (Properties) commonsConfigurationFactoryBean.getObject();
-        PropertiesPropertySource dbPropertySource = new PropertiesPropertySource("dbPropertySource", dbProps);
-        
-        //By being First, Database Properties take precedence over all other properties that have the same key name
-        //You could put this last, or just in front of the application.properties if you wanted to...
-        propertySources.addFirst(dbPropertySource);
-    } catch (Exception e) {
-        log.error("Error during database properties setup", e);
-        throw new RuntimeException(e);
-    }
-}
-</code></pre>
           </section>
           <section>
             <h2>Spring Data JPA</h2>
@@ -350,28 +308,7 @@ public void initializeDatabasePropertySourceUsage() {
 </code></pre>
           </section>
           <section>
-            <h2>REST Exception Handling</h2>
-            <ul>
-              <li>Global handling based on Exception types</li>
-              <li>See RestResponseEntityExceptionHandler.java <a href="https://gist.github.com/jeffsheets/8b73620e0912afd95aa0#file-restresponseentityexceptionhandler-java" target="_blank"><i class="fa fa-external-link"></i></a></li>
-            </ul>
-            <pre><code data-trim contenteditable class="groovy">@ControllerAdvice
-  public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
-      @ExceptionHandler({ Exception.class })
-      @ResponseBody
-      public ResponseEntity<?> handleAnyException(Exception e) {
-          return errorResponse(e, HttpStatus.INTERNAL_SERVER_ERROR);
-      }
-      
-      @ExceptionHandler({ InvocationTargetException.class, IllegalArgumentException.class})
-      @ResponseBody
-      public ResponseEntity handleMiscFailures(Throwable t) {
-          return errorResponse(t, HttpStatus.BAD_REQUEST);
-      }
-                </code></pre>
-          </section>
-          <section>
-            <h2>Spring MVC Tests &nbsp;<a href="https://gist.github.com/jeffsheets/ada3de8fe4a536e5351b" target="_blank"><i class="fa fa-external-link"></i></a></h2>
+            <h2>Spring MVC Spock Tests &nbsp;<a href="https://gist.github.com/jeffsheets/ada3de8fe4a536e5351b" target="_blank"><i class="fa fa-external-link"></i></a></h2>
             <pre><code data-trim contenteditable class="groovy">class AccountControllerTest extends Specification {
   def accountController = new AccountController()
   
@@ -403,6 +340,10 @@ public void initializeDatabasePropertySourceUsage() {
               <li>Great docs</li>
               <li>Simple tutorials</li>
             </ul>
+          </section>
+          <section>
+            <h2>Old + New = Spring Boot</h2><img src="assets/img/hipster-bike.jpg" class="sixty"/>
+            <div><small>http://www.buzzfeed.com/awesomer/the-most-hipster-things-that-have-ever-happened</small></div>
           </section>
         </section>
         <section>
@@ -518,6 +459,14 @@ yo jhipster:entity attendee
             <pre><code data-trim contenteditable>mvn -Pprod package
 java -jar jhipster-0.0.1-SNAPSHOT.war --spring.profiles.active=prod
 </code></pre>
+          </section>
+          <section>
+            <h2>Very Actively Developed</h2>
+            <ul>
+              <li>2.6.0 added full stack Validations</li>
+              <li>2.5 added Gatling Performance testing</li>
+              <li>Spring Boot 1.2.2 added JMustache support</li>
+            </ul>
           </section>
           <section>
             <h2>Extras</h2>
