@@ -318,7 +318,7 @@ html(class="no-js", ng-app="main")
             h2 Much more
             ul
               li JSP/GSP/Thymeleaf 
-               a(href="http://www.thymeleaf.org/doc/usingthymeleaf.html#dialects-the-standard-dialect", target="_blank")
+               a(href="http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html", target="_blank")
                 i.fa.fa-external-link
               li Metrics - app-server style
               li No-SQL data stores, if that's your thing
@@ -418,14 +418,14 @@ html(class="no-js", ng-app="main")
               //city, state, one-to-many attendee
 
               yo jhipster:entity attendee
-              //name, previousAttendee, notes, many-to-one location
+              //name, previousAttendee, speaker, notes, many-to-one location
               </code>
           section
             h2 Show and Tell
             ul
               li Change db to on-disk
-              li Display city, state on attendee.html list (Livereload!)
-              li Improve previousAttendee Y/N
+              li Display city, state on attendees.html list (Livereload!)
+              li Improve previousAttendee and speaker Y/N
           section
             h2 JHipster-loaded
             ul
@@ -498,9 +498,11 @@ html(class="no-js", ng-app="main")
               li JHipster Twitter account 
                 a(href="https://twitter.com/java_hipster", target="_blank") @java_hipster
           section.image-section(data-state="image-slide")
-            h3 Questions &nbsp;
-             i.fa.fa-question-circle
-            img(src="http://i.giphy.com/UPXy00gJYEdgc.gif").boss
+            h2 Thank You!
+            h4
+               i.fa.fa-twitter &nbsp;
+               a(href="https://twitter.com/sheetsj", target="_blank") @sheetsj
+            img(src="http://i.giphy.com/UPXy00gJYEdgc.gif").forty
             div
               small http://i.giphy.com/UPXy00gJYEdgc.gif
 
